@@ -1,0 +1,56 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+// MARK: - {{ module_info.name }}Assembly Class Implementation
+final class {{ module_info.name }} {
+
+    public struct Input {
+
+    }
+
+    public static func create(withInput input: {{ module_info.name }}.Input? = nil,
+                                      output: {{ module_info.name }}ModuleOutput? = nil) 
+        -> {{ module_info.name }}Controller {
+
+	    let storyboardName = String(describing: type(of: self))
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+
+	    guard let view = storyboard.instantiateInitialViewController() as? {{ module_info.name }}Controller else {
+            fatalError("Storyboard with {{ module_info.name }}Controller not found.")
+        }
+        
+        let model = {{ module_info.name }}Model()
+        let router = {{ module_info.name }}Router(for: view)
+	    let presenter = {{ module_info.name }}Presenter(for: view, with: router, and: model)
+	    view.presenter = presenter
+
+        return view
+    }
+}
+
+// MARK: - {{ module_info.name }}ModuleOutput Protocols
+protocol {{ module_info.name }}ModuleOutput: class {
+
+}
+
+// MARK: - {{ module_info.name }}Viewable protocol
+protocol {{ module_info.name }}Viewable: class {
+
+}
+
+// MARK: - {{ module_info.name }}Presentable protocol
+protocol {{ module_info.name }}Presentable: class {
+    func viewDidLoad()
+}
+
+// MARK: - {{ module_info.name }}Routable protocol
+protocol {{ module_info.name }}Routable: class {
+    func toRoute(route: {{ module_info.name }}Router.Routes)
+}

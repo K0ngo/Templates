@@ -1,0 +1,43 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+// MARK: - {{ module_info.name }} Module Protocols
+protocol {{ module_info.name }}Output: NSObjectProtocol {
+
+}
+
+// MARK: - {{ module_info.name }}Assembly Class Implementation
+final class {{ module_info.name }}Assembly {
+
+    public struct Input {
+
+    }
+
+    public class func create(withInput input: {{ module_info.name }}Assembly.Input? = nil,
+                                      output: {{ module_info.name }}Output? = nil)
+        -> {{ module_info.name }}Controller
+    {
+        let storyboard = UIStoryboard(name: "{{ module_info.name }}", bundle: nil)
+        let identifier = "{{ module_info.name }}ControllerId"
+
+        let model  = {{ module_info.name }}Model()
+
+        guard let controller  = storyboard.instantiateViewController(withIdentifier: identifier) as? {{ module_info.name }}Controller else {
+              let controller  = {{ module_info.name }}Controller()
+            controller.model  = model
+            controller.router = {{ module_info.name }}Router(for: controller)
+            return controller
+        }
+        
+        controller.model  = model
+        controller.router = {{ module_info.name }}Router(for: controller)
+        return controller
+    }
+}

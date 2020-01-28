@@ -1,0 +1,40 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+// MARK: - {{ module_info.name }}View Output Protocol
+protocol {{ module_info.name }}ViewOutput: NSObjectProtocol {
+
+}
+
+// MARK: - {{ module_info.name }}View Input Protocol
+protocol {{ module_info.name }}ViewInput: NSObjectProtocol {
+
+    func viewDidLoad()
+}
+
+// MARK: - {{ module_info.name }}View Class Implementation
+class {{ module_info.name }}View: YLView {
+
+    // MARK: - Class Properties
+    // MARK: Public
+    weak var output: {{ module_info.name }}ViewOutput?
+    // MARK: Outlets
+
+    // MARK: Private
+
+}
+
+// MARK: - {{ module_info.name }}ViewInput Protocol Implementation
+extension {{ module_info.name }}View: {{ module_info.name }}ViewInput {
+
+    func viewDidLoad() {
+
+    }
+}

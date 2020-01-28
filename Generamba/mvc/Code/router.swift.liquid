@@ -1,0 +1,36 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Foundation
+
+// MARK: - {{ module_info.name }}Router Class Implementation
+class {{ module_info.name }}Router {
+
+    private weak var vc: {{ module_info.name }}Controller!
+    init(for vc: {{ module_info.name }}Controller) {
+        self.vc = vc
+    }
+
+    // MARK: - Routes
+    enum Route {
+        case system
+    }
+
+    // MARK: - Router Input Impl.
+    func perform(route: Route) {
+        switch route {
+            case .system:
+                break
+        }
+    }
+}
+
+// MARK: - Private Class Methods
+private extension {{ module_info.name }}Router {
+
+}

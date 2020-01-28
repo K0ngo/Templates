@@ -1,0 +1,43 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Foundation
+
+// MARK: - {{ module_info.name }}Presenter Class Implementation
+class {{ module_info.name }}Presenter {
+
+    // MARK: - Class Properties
+    // MARK: Public
+
+    // MARK: Private
+    private weak var view: {{ module_info.name }}Viewable?
+    private let router: {{ module_info.name }}Routable
+    private let model: {{ module_info.name }}Model
+
+
+    // MARK: - Initialize
+    init(for view: {{ module_info.name }}Viewable, with router: {{ module_info.name }}Routable, and model: {{ module_info.name }}Model) {
+    	self.view = view
+        self.router = router
+	    self.model = model
+    }
+
+}
+
+// MARK: - Private Methods
+private extension {{ module_info.name }}Presenter {
+
+}
+
+// MARK: - {{ module_info.name }}Presentable Protocol Implementation
+extension {{ module_info.name }}Presenter: {{ module_info.name }}Presentable {
+
+    func viewDidLoad() {
+
+    }
+}

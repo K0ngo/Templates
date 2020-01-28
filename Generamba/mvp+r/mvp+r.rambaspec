@@ -1,0 +1,27 @@
+# Template information section
+name: "mvp+r"
+summary: "MVP+R module"
+author: Alexander Bakuta
+version: 0.0.1
+license: MIT
+
+# The declarations for code files
+code_files:
+
+# Storyboard
+- {name: .storyboard, path: Code/view.storyboard.liquid}
+
+# Assembly
+- {name: .swift, path: Code/assembly.swift.liquid}
+
+# View
+- {name: View.swift, path: Code/controller.swift.liquid}
+
+# Presenter
+- {name: Presenter.swift, path: Code/presenter.swift.liquid}
+
+# Model
+- {name: Model.swift, path: Code/model.swift.liquid}
+
+# Router
+- {name: Router.swift, path: Code/router.swift.liquid}

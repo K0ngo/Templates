@@ -1,0 +1,43 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+// MARK: - {{ module_info.name }}Controller Class Implementation
+class {{ module_info.name }}Controller: UIViewController {
+
+    // MARK: - Class Properties
+    // MARK: Public
+    var model: {{ module_info.name }}Model?
+    var router: {{ module_info.name }}Router?
+    // MARK: Private
+    private var _view: {{ module_info.name }}View {
+        return self.view as! {{ module_info.name }}View
+    }
+
+    // MARK: - Lifecycle
+    override func loadView() {
+        super.loadView()
+        _view.output = self
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        _view.viewDidLoad()
+    }
+}
+
+// MARK: - Class Private Methods
+private extension {{ module_info.name }}Controller {
+
+}
+
+// MARK: - {{ module_info.name }}View Output Protocol Implementation
+extension {{ module_info.name }}Controller: {{ module_info.name }}ViewOutput {
+
+}

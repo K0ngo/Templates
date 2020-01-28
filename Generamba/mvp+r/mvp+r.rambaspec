@@ -15,7 +15,7 @@ code_files:
 - {name: .swift, path: Code/assembly.swift.liquid}
 
 # View
-- {name: View.swift, path: Code/controller.swift.liquid}
+- {name: Controller.swift, path: Code/controller.swift.liquid}
 
 # Presenter
 - {name: Presenter.swift, path: Code/presenter.swift.liquid}

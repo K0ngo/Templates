@@ -19,17 +19,17 @@ final class {{ module_info.name }} {
                                       output: {{ module_info.name }}ModuleOutput? = nil) 
         -> {{ module_info.name }}Controller {
 
-	    let storyboardName = String(describing: type(of: self))
+	let storyboardName = String(describing: self)
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
 
-	    guard let view = storyboard.instantiateInitialViewController() as? {{ module_info.name }}Controller else {
+	guard let view = storyboard.instantiateInitialViewController() as? {{ module_info.name }}Controller else {
             fatalError("Storyboard with {{ module_info.name }}Controller not found.")
         }
         
         let model = {{ module_info.name }}Model()
         let router = {{ module_info.name }}Router(for: view)
-	    let presenter = {{ module_info.name }}Presenter(for: view, with: router, and: model)
-	    view.presenter = presenter
+	let presenter = {{ module_info.name }}Presenter(for: view, with: router, and: model)
+	view.presenter = presenter
 
         return view
     }
